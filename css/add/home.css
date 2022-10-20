@@ -1,0 +1,95 @@
+/**************************************************
+
+BASE
+
+****************************************************/
+
+
+/* hero-home slider
+
+.hero-image{
+    position: relative;
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+
+#topVisual{
+    padding-bottom: 30px;
+}
+
+#topVisual > div{
+    overflow: hidden;
+}
+
+#topVisual img{
+    display: block;
+    width: 100%;
+    height: auto;  
+}
+
+body .slick-dots{
+    left: 50%;
+    bottom: 0;
+    max-width: 1200px;
+    z-index: 10;
+    transform: translateX(-50%);
+}
+
+body .slick-dots li{
+    width: 15px;
+    height: 15px;
+    margin: 0 10px;
+}
+
+body .slick-dots li button{
+    width: 15px;
+    height: 15px;
+    line-height: 5px !important;
+}
+
+body .slick-dots li button::before{
+    width: 15px;
+    height: 15px;
+    color: #ccc;
+    font-size: 15px;
+    line-height: 15px !important;
+    opacity: 1;
+}
+
+body .slick-dots li.slick-active button::before{
+    color: #0060be;
+}
+
+body .slick-dotted.slick-slider{
+    margin-bottom: 0;
+}
+
+ */
+
+
+/*************************************************
+
+CONTENTS
+
+****************************************************/
+
+
+
+
+/* Responsive
+*********************************************************/
+
+/* Tablet side Only */
+@media screen and (min-width:829px) and (max-width:1200px) {
+    
+}
+
+/* Smartphone side + Tablet Vertical */
+@media screen and (max-width:828px) {
+
+}
+
+/* Smartphone Vertical */
+@media screen and (max-width:415px) {
+
+}
