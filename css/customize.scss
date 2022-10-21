@@ -88,10 +88,6 @@ a {
 :root {
     font-size: 16px;
 
-    @include sp {
-        font-size: 4vw;
-    }
-
     --fixed-header-height: 106px;
 
     @media screen and (max-width: $fixedHeaderBreak) {
