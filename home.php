@@ -1,32 +1,36 @@
 <?php get_header(); ?>
 
 <article id="home">
-
-<!---------------------------------------------- slider -------------------------------------->
 	<aside class="hero-image">
+
+		<?php echo wp_get_attachment_image(45, 'full', false, ['class' => 'hero-emblem']); ?>
+
 		<div id="topVisual">
 			<div class="wrap1">
-				<?php echo wp_get_attachment_image(17, 'full', false, ['class' => 'image']); ?>
+				<?php echo wp_get_attachment_image(0, 'full', false, ['class' => 'image']); ?>
 			</div>
 			<div class="wrap1">
-				<?php echo wp_get_attachment_image(19, 'full', false, ['class' => 'image']); ?>
+				<?php echo wp_get_attachment_image(0, 'full', false, ['class' => 'image']); ?>
 			</div>
 			<div class="wrap1">
-				<?php echo wp_get_attachment_image(18, 'full', false, ['class' => 'image']); ?>
+				<?php echo wp_get_attachment_image(0, 'full', false, ['class' => 'image']); ?>
 			</div>
-		</div><!-- /#topVisual -->
-	</aside><!-- /.hero-image -->
+		</div>
+		<div id="topVisualSp">
+			<div class="wrap1">
+				<?php echo wp_get_attachment_image(245, 'full', false, ['class' => 'image']); ?>
+			</div>
+			<div class="wrap1">
+				<?php echo wp_get_attachment_image(70, 'full', false, ['class' => 'image']); ?>
+			</div>
+			<div class="wrap1">
+				<?php echo wp_get_attachment_image(71, 'full', false, ['class' => 'image']); ?>
+			</div>
+		</div>
+	</aside>
 
-<!-------------------------------------------- imgonly -------------------------------------->
-	<aside class="hero-image">
-		<?php echo wp_get_attachment_image(60, 'full', false, ['class' => 'image']); ?>
-	</aside><!-- /.hero-image -->
+	<main>
 
-<!-------------------------------------------- main ------------------------------------------->
-
-	<section id="main">
-
-	</section><!-- /#main -->
-</article><!-- /#home -->
-
+	</main>
+</article>
 <?php get_footer(); ?>

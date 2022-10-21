@@ -1,11 +1,15 @@
 <?php get_header(); ?>
 
 <article id="<?php echo $post->post_name; ?>">
-	<section id="main">
+	<main>
 
-	</section>
-	<!-- /#main -->
+		<section id="">
+			<div class="container">
+
+			</div>
+		</section>
+
+	</main>
 </article>
-<!-- /#<?php echo $post->post_name; ?> -->
 
 <?php get_footer(); ?>

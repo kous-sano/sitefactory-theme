@@ -1,0 +1,21 @@
+// XDのカーニングの値をletter-spacing値に変換
+@mixin kerning($kerningNum) {
+    letter-spacing: calc($kerningNum / 1000) + 0em;
+}
+
+// XDの行送りをline-heightに変換
+// 最初に行送りの数値を、次にフォントサイズを指定
+@mixin lineHeight($lHeight, $fontSize) {
+    line-height: calc($lHeight / $fontSize);
+}
+
+// 基本的なスマホデザイン幅とされている375pxから割合を算出
+@function spWidthRatio($size) {
+    @return calc($size / 375 * 100)+0vw;
+}
+
+// 親要素の横幅から子要素の横幅の割合を算出
+// 最初に親の幅、次に子の幅を入力
+@function childRatio($parent, $child) {
+    @return calc($child / $parent * 100)+0%;
+}

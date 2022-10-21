@@ -1,15 +1,14 @@
 <?php get_header(); ?>
-<article id="contact">
-    <section id="main">
-        <div class="container">
+<article id="contact" class="submit-end">
+    <main>
+        <div class="container lazy">
 
-            <?php the_post(); the_content(); ?>
-            
-            <div class="btnWrap01 text-center">
-                <a href="<?php echo esc_url(home_url('')); ?>" class="btn03">トップページヘ戻る</a>
-            </div><!-- /.btnWrap01 -->
+            <?php the_post();
+            the_content(); ?>
+
+            <a href="<?php echo esc_url(home_url('')); ?>" class="link-button">トップページへ戻る</a>
 
         </div><!-- /.container -->
-    </section><!-- /#main -->
+    </main><!-- /#main -->
 </article><!-- /#contact -->
 <?php get_footer(); ?>

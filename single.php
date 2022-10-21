@@ -1,54 +1,31 @@
 <?php get_header(); ?>
 <article id="news" class="news-single">
-	<section id="main">
-		<div class="container">
-
+	<main>
+		<div class="container lazy">
 			<?php
-			if(have_posts()): while(have_posts()): the_post();
+			if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			$src = get_the_post_thumbnail( $post_id, 'medium_large', array( 'class' => 'image'));
-
-			if($src){
-				$class = "news__txt";
-			}else{
-				$class = "news__txt--only";
-			}
-			?>
-
-			<section class="section01">
-				<div class="columns">
-					<?php
-						if($src){
-							echo "<div class=\"news__img lazy\">{$src}</div>";
-						}
-					?>
-					<div class="<?php echo $class ?> lazy">
-						<time class="news__date"><?php the_time("Y.m.d"); ?></time>
-						<h2 class="news__title"><?php the_title(); ?></h2>
-						<div class="inner01">
+					<section class="single-post">
+						<time><?php the_time("Y.m.d"); ?></time>
+						<h2><?php the_title(); ?></h2>
+						<div class="content-area">
 							<?php the_content(); ?>
-						</div><!-- /.inner01 -->
-					</div><!-- /.<?php echo $class ?> -->
-				</div><!-- /.columns -->
-			</section><!-- /.section01 -->
+						</div>
+						<div class="thumbnail-area">
+							<?php echo get_the_post_thumbnail($post_id, 'medium_large', array('class' => 'image')); ?>
+						</div>
+					</section>
 
-			<?php endwhile;endif; ?>
+			<?php endwhile;
+			endif; ?>
 
-			<div class="wp-pagenavi var01 lazy">
-				<div class="wp-pagenavi__prev">
-					<?php next_post_link('%link','<< %title'); ?>
-				</div><!-- /.wp-pagenavi__prev -->
-				<div class="wp-pagenavi__next">
-					<?php previous_post_link('%link','%title >>'); ?>
-				</div><!-- /.wp-pagenavi__next -->
-			</div><!-- /.wp-pagenavi -->
-
-		</div><!-- /.container -->
-	</section><!-- /#main -->
-</article><!-- /#news.news-single -->
+			<a href="<?php echo esc_url(home_url('news')); ?>" class="link-button">お知らせ一覧へ</a>
+		</div>
+	</main>
+</article>
 <script type="text/javascript">
-jQuery(function($){
-	$( '#main table' ).wrap( '<div class="flickWrap"></div>' );
-});
+	jQuery(function($) {
+		$('#main table').wrap('<div class="flickWrap"></div>');
+	});
 </script>
 <?php get_footer(); ?>

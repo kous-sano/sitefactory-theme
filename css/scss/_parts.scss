@@ -1,0 +1,153 @@
+@mixin link-button {
+    display: table;
+    $iconSize: 60px;
+    height: $iconSize;
+    font-size: 18px;
+    padding-top: 16px;
+    font-weight: bold;
+    font-family: $fontYuMincho;
+    padding-left: calc($iconSize + 13px);
+    opacity: 1;
+    position: relative;
+
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        width: $iconSize;
+        aspect-ratio: 1/1;
+        border-radius: 100%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        transition: opacity 0.5s;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    &:before {
+        opacity: 1;
+        background-image: $ico_arrow_right_white;
+    }
+
+    &:after {
+        opacity: 0;
+        background-image: $ico_arrow_right_color;
+    }
+
+    &:hover {
+        opacity: 1;
+
+        &:before {
+            opacity: 0;
+        }
+
+        &:after {
+            opacity: 1;
+        }
+    }
+}
+
+@mixin link-button-white {
+    @include link-button;
+    color: $white  !important;
+
+    &:before {
+        background-image: $ico_arrow_right_all-white;
+    }
+
+    &:after {
+        background-image: $ico_arrow_right_all-white_hover;
+    }
+}
+
+.link-button {
+    @include link-button;
+}
+
+.link-button-white {
+    @include link-button-white;
+}
+
+@mixin headline01 {
+    width: 100%;
+    font-size: 26px;
+    padding-left: 40px;
+    padding-bottom: 13px;
+    margin-bottom: 30px;
+    font-family: $fontYuMincho;
+    line-height: 1em;
+    font-weight: bold;
+    border-bottom: solid 2px $mainColor;
+    position: relative;
+
+    &:before {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 14.045px 24.33px 14.045px;
+        border-color: transparent transparent $mainColor transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+@mixin tableTwoCol01 {
+    tbody {
+        tr {
+            border-bottom: solid 5px $white;
+            th,
+            td {
+                border: none;
+                font-size: 16px;
+
+                &:nth-child(1) {
+                    width: 246px;
+                    border-right: solid 5px $white;
+                    background-color: $baseColor;
+                    color: $white;
+                    font-weight: bold;
+                }
+
+                &:nth-child(2) {
+                    background-color: #F8F8F8;
+                }
+
+            }
+
+            @include sp{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                th,td{
+                    width: 100%!important;
+                    
+                &:nth-child(1) {
+                    border-right: none;
+                }
+
+                &:nth-child(2) {
+                    
+                }
+                }
+            }
+        }
+    }
+}
+
+.sp-only {
+    @media screen and (min-width: ($spWidth + 1)) {
+        display: none;
+    }
+    @media screen and (max-width: $spWidth){
+        br{
+            display: block!important;
+        }
+    }
+}

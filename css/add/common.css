@@ -47,15 +47,14 @@ body {
 
 body,
 .pure-g [class*=pure-u] {
-    font-family: "游ゴシック", YuGothic, "メイリオ", Meiryo, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
-    font-weight: 500;
+    font-family: "游ゴシック", YuGothic, Verdana, "メイリオ", Meiryo, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
 }
 
 @media all and (-ms-high-contrast:none) {
 
     body,
     .pure-g [class*=pure-u] {
-        font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
+        font-family: "メイリオ", Meiryo, Verdana, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
     }
 }
 

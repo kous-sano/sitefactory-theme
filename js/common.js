@@ -1,50 +1,27 @@
 jQuery(function($){
 
-    //anchorlink
-    $('body,html').stop().scrollTop(0);
-    const hash = window.location.hash;
-    if (hash !== '') {
-        window.location.hash = "";
-        $(function () {
-            $('.lazy').removeClass('lazy');
-        });
-    }
-    (window.onload = function () {
-        if (hash !== void 0 && hash !== '') {
-            var speed = 600;
-            var href = $(this).attr("href");
-            var target = $(hash);
-            var position = target.offset().top;
-            $('body,html').animate({
-                scrollTop: position
-            }, speed, 'swing');
+    $('label[for=gNavTrigger]').click(function(){
+        if($('input#gNavTrigger').prop('checked') == true){
+            $('body').removeClass('opengNav');
+        }else{
+            $('body').addClass('opengNav');
         }
-    })()
-    $('a[href^="#"]').click(function () {
-        var speed = 600;
-        var href = $(this).attr("href");
-        var target = $(href == "#" || href == "" ? 'html' : href);
-        var position = target.offset().top;
-        $('body,html').animate({
-            scrollTop: position
-        }, speed, 'swing');
-        return false;
     });
 
-    //sp gNavi
-    $('#btnGnavi').click(function () {
-        $('#gNavi ul').stop().slideToggle('fast');
+    //sp gNav
+    $('#btngNav').click(function () {
+        $('#gNav ul').stop().slideToggle('fast');
     });
     var menuBtn = $('#header a.menu-trigger');
     menuBtn.on('click', function () {
         if ($(this).hasClass('active')) {
             $(this).removeClass('active');
-            $('#gNavi').removeClass('active');
+            $('#gNav').removeClass('active');
             $('body').removeClass('activeNav');
             $('html').removeClass('activeNav');
         } else {
             $(this).addClass('active');
-            $('#gNavi').addClass('active');
+            $('#gNav').addClass('active');
             $('body').addClass('activeNav');
             $('html').addClass('activeNav');
         }
